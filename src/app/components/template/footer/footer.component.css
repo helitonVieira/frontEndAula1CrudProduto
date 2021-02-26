@@ -1,0 +1,12 @@
+.footer { /*configura a barra de rodape*/
+    position: fixed;/*barra ficar fixa*/
+    bottom: 0;/*colocar na parte de baixo da tela*/
+
+    display: flex;
+    justify-content: flex-end; /*colocar o texto no final da linha */
+}
+
+.footer > span { /*configuraçoes geral do span do rodape2*/
+    font-size: 1.1rem;
+    font-weight: 300;
+}

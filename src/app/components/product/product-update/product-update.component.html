@@ -1,0 +1,31 @@
+<mat-card>
+    <mat-card-title>Alterar Produto</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Nome"
+                [(ngModel)]="product.nome" name="nome">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-label> Subcategoria </mat-label> 
+            <mat-select [(ngModel)] = "product.subcategoria.id" name = "subcategoria.id" placeholder="Subcategoria"> 
+                <mat-option [value]="">   </mat-option> 
+              <mat-option *ngFor = " let subcategoria of subcategorias" [value]="subcategoria.id">
+                {{subcategoria.descricao}}
+              </mat-option> 
+            </mat-select> 
+          </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Preço (R$)"
+                [(ngModel)]="product.preco" name="preco">
+        </mat-form-field>
+    </form>
+    <button mat-raised-button (click)="updateProduct()" color="primary">
+        Atualizar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
