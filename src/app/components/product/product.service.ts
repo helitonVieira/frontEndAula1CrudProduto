@@ -1,7 +1,9 @@
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { HttpClient } from "@angular/common/http";
+
 import { Produto } from "./product.model";
+
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 
@@ -31,7 +33,7 @@ export class ProductService {
 
   read(): Observable<Produto[]> {
     return this.http.get<Produto[]>(this.baseUrl).pipe(
-      map((obj) => obj),
+     map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
@@ -39,7 +41,7 @@ export class ProductService {
   readById(id: number): Observable<Produto> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.get<Produto>(url).pipe(
-      map((obj) => obj),
+     map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
@@ -55,7 +57,7 @@ export class ProductService {
   delete(id: number): Observable<Produto> {
     const url = `${this.baseUrl}/${id}`;
     return this.http.delete<Produto>(url).pipe(
-      map((obj) => obj),
+     map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }

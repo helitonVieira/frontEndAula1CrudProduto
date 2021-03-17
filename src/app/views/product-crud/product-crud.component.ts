@@ -13,11 +13,15 @@ export class ProductCrudComponent implements OnInit {
     headerService.headerData = {
       title: 'Cadastro de Produtos',
       icon: 'storefront',
+
       routeUrl: '/produto'
+
     }
   }
 
   ngOnInit(): void {
+
   }  
+
 
 }

@@ -2,32 +2,29 @@
     <mat-card-title>Novo Produto</mat-card-title>
     <form>
         <mat-form-field>
-            <input matInput placeholder="Nome"
-                [(ngModel)]="produto.nome" name="nome">
-        </mat-form-field>  
-        
-       
-        <mat-form-field>
-        <mat-label> Subcategoria </mat-label> 
-        <mat-select [(ngModel)] = "produto.subcategoria.id" name = "produto.subcategoria.id" placeholder="Subcategoria"> 
-            <mat-option [value]="">   </mat-option> 
-          <mat-option *ngFor = " let subcategoria of subcategorias" [value]="subcategoria.id">
-            {{subcategoria.descricao}}
-          </mat-option> 
-        </mat-select> 
-      </mat-form-field>
+            <input matInput placeholder="Nome" [(ngModel)]="produto.nome" name="nome">
+        </mat-form-field>
+
 
         <mat-form-field>
-            <input matInput placeholder="Preço (R$)"
-                [(ngModel)]="produto.preco" name="preco">
-        </mat-form-field>       
+            <mat-label> Subcategoria </mat-label>
+            <mat-select [(ngModel)]="produto.subcategoria.id" name="produto.subcategoria.id" placeholder="Subcategoria">
+                <mat-option [value]=""> </mat-option>
+                <mat-option *ngFor=" let subcategoria of subcategorias" [value]="subcategoria.id">
+                    {{subcategoria.descricao}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Preço (R$)" [(ngModel)]="produto.preco" name="preco">
+        </mat-form-field>
     </form>
     <button mat-raised-button (click)="createProduct()" color="primary">
         Salvar
     </button>
-    
+
     <button mat-raised-button (click)="cancel()">
         Cancelar
     </button>
 </mat-card>
-

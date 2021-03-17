@@ -1,3 +1,4 @@
+
 import { CustomPaginator } from './components/subcategoria/custom-paginator';
 import { NgModule, LOCALE_ID } from '@angular/core';// LOCALE_ID passar para formato pt-BR
 import { BrowserModule } from '@angular/platform-browser';
@@ -34,7 +35,6 @@ import localePt from '@angular/common/locales/pt'; //passar para formato pt-BR
 import { registerLocaleData } from  '@angular/common';//passar para formato pt-BR
 import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
 
-
 import { ProductCrudComponent } from './views/product-crud/product-crud.component'; /*parte do nav navegação*/
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
@@ -69,6 +69,7 @@ registerLocaleData(localePt);//passar para formato pt-BR
     ProductRead2Component,
     ProductUpdateComponent,
     ProductDeleteComponent,
+
     ImprimirComponent,
     SubcategoriaCrudComponent,
     SubcategoriaReadComponent,

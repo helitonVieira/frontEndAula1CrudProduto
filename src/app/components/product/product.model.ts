@@ -4,4 +4,5 @@ export interface Produto {
     nome: string
     subcategoria : Subcategoria
     preco: number
+
 }

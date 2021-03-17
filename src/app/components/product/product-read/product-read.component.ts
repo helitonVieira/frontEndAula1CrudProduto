@@ -51,5 +51,4 @@ export class ProductReadComponent implements OnInit {
   applyFilter() {
     this.dataSource.filter = this.searchKey.trim().toUpperCase()
   }
-
 }

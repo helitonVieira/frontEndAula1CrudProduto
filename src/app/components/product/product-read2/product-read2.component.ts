@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Produto } from './../product.model';
+=======
+import { Product } from './../product.model';
+>>>>>>> 786915fc5ad7e129b4831ca55c6529dc28da35c4
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
@@ -13,11 +17,19 @@ import { ProductRead2DataSource } from './product-read2-datasource';
 export class ProductRead2Component implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
+<<<<<<< HEAD
   @ViewChild(MatTable) table: MatTable<Produto>;
   dataSource: ProductRead2DataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['id', 'nome','subcategoria.id','subcategoria.descricao', 'preco'];
+=======
+  @ViewChild(MatTable) table: MatTable<Product>;
+  dataSource: ProductRead2DataSource;
+
+  /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
+  displayedColumns = ['id', 'name', 'price'];
+>>>>>>> 786915fc5ad7e129b4831ca55c6529dc28da35c4
 
   ngOnInit() {
     this.dataSource = new ProductRead2DataSource();
