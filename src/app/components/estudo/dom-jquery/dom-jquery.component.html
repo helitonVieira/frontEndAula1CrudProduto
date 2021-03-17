@@ -1,0 +1,20 @@
+<p>dom-jquery works!</p>
+
+<input type="button" value="msg alerta" id="btn1" (click)="msgAlerta()">
+
+
+<div>
+    <!--(blur)="this.digitado = $event.target.value"  (blur) tem mesmo valor da função change
+     [(ngModel)]="digitado"  recebe e manda texto-->
+    <input type="text" [(ngModel)]="digitado" name="txtchange" id="digit" (change)="change()">
+    recebendo valor do typescript {{digitado}}
+</div> <br>
+
+<h3>Passando valor para typescripe</h3>
+<div>
+    <input type="text" name="t2" id="t2" (blur)="receberValorHtml($event.target.value)">
+    {{digitado}}
+</div>
+<div>
+  
+</div>

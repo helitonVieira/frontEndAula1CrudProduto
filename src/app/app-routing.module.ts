@@ -1,3 +1,4 @@
+import { DomJqueryComponent } from './components/estudo/dom-jquery/dom-jquery.component';
 import { SubcategoriaCrudComponent } from './views/subcategoria-crud/subcategoria-crud.component';
 import {SubcategoriaDeleteComponent } from './components/subcategoria/subcategoria-delete/subcategoria-delete.component';
 import {SubcategoriaUpdateComponent } from './components/subcategoria/subcategoria-update/subcategoria-update.component';
@@ -61,6 +62,11 @@ const routes: Routes = [
   {
     path: "ingresso/imprimir",
     component: ImprimirComponent
+  },
+
+  {
+    path: "estudo/domjquery",
+    component: DomJqueryComponent
   },
 ];
 

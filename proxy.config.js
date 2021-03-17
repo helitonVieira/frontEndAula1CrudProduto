@@ -1,3 +1,4 @@
+  //arquivo configuração para comunicar com backend porta 8080 manda endereço sem o /api
   const proxy = [
     {
       context: ['/api'],

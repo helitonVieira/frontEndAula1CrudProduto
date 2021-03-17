@@ -49,6 +49,7 @@ import { SubcategoriaUpdateComponent } from './components/subcategoria/subcatego
 import { SubcategoriaDeleteComponent } from './components/subcategoria/subcategoria-delete/subcategoria-delete.component';
 import { SubcategoriaCreateComponent } from './components/subcategoria/subcategoria-create/subcategoria-create.component'; // ng generate @angular/material:table components/product/product-head2
 import { MatSelectModule } from '@angular/material/select';
+import { DomJqueryComponent } from './components/estudo/dom-jquery/dom-jquery.component';
 
 /*import { ForDirective } from './directives/for.directive';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
@@ -73,7 +74,8 @@ registerLocaleData(localePt);//passar para formato pt-BR
     SubcategoriaReadComponent,
     SubcategoriaUpdateComponent,
     SubcategoriaDeleteComponent,
-    SubcategoriaCreateComponent
+    SubcategoriaCreateComponent,
+    DomJqueryComponent
   ],
   imports: [
     BrowserModule, 
