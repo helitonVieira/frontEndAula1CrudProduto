@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { ProductService } from './../product.service';
-import { Produto } from './../product.model';
+import { Produto } from './../produto.model';
 import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { MatSort } from '@angular/material/sort';

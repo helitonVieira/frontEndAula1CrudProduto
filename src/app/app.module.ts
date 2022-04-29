@@ -33,7 +33,6 @@ import { MatSortModule } from '@angular/material/sort';
 
 import localePt from '@angular/common/locales/pt'; //passar para formato pt-BR
 import { registerLocaleData } from  '@angular/common';//passar para formato pt-BR
-import { ProductRead2Component } from './components/product/product-read2/product-read2.component';
 
 import { ProductCrudComponent } from './views/product-crud/product-crud.component'; /*parte do nav navegação*/
 import { ProductReadComponent } from './components/product/product-read/product-read.component';
@@ -66,7 +65,6 @@ registerLocaleData(localePt);//passar para formato pt-BR
     ProductCrudComponent,
     ProductCreateComponent,
     ProductReadComponent,
-    ProductRead2Component,
     ProductUpdateComponent,
     ProductDeleteComponent,
 
