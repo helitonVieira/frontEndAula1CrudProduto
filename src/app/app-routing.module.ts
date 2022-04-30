@@ -1,3 +1,4 @@
+import { LoginComponent } from './components/login/login.component';
 
 import { DomJqueryComponent } from './components/estudo/dom-jquery/dom-jquery.component';
 import { SubcategoriaCrudComponent } from './views/subcategoria-crud/subcategoria-crud.component';
@@ -17,6 +18,10 @@ import { HomeComponent } from "./views/home/home.component";
 import { ProductCrudComponent } from "./views/product-crud/product-crud.component";
 
 const routes: Routes = [
+  {
+    path: "login",
+    component: LoginComponent
+  },
 
   {
     path: "",
