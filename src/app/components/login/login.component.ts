@@ -30,4 +30,12 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  validaCampor(): boolean {
+    if (this.email.valid && this.senha.valid) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
 }
