@@ -1,12 +1,28 @@
+import { Credenciais } from './../../models/credenciais';
+import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Injectable } from '@angular/core';
+
+import { Observable, EMPTY } from "rxjs";
+import { map, catchError } from "rxjs/operators";
 
 @Injectable({
   providedIn: 'root'
 })
-export class LoginService {
 
-  constructor(private snackBar: MatSnackBar) { }
+
+export class LoginService { //nome padrao AuthService
+
+  baseUrl = "/login";
+
+  constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
+
+  authenticate(credenciais: Credenciais) {
+      return this.http.post(this.baseUrl, credenciais,{
+        observe: 'response',
+        responseType: 'text'
+    });
+  }  
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {
@@ -15,5 +31,10 @@ export class LoginService {
       verticalPosition: "top",
       panelClass: isError ? ["msg-error"] : ["msg-success"],
     });
+  }
+
+  errorHandler(e: any): Observable<any> {
+    this.showMessage("Ocorreu um erro!", true);
+    return EMPTY;
   }
 }
