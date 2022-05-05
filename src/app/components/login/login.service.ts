@@ -21,8 +21,15 @@ export class LoginService { //nome padrao AuthService
       return this.http.post(this.baseUrl, credenciais,{
         observe: 'response',
         responseType: 'text'
-    });
-  }  
+        
+    }).pipe(
+      catchError((e) => this.errorHandler(e))
+    );
+  }    
+
+  successLogin(authToken: string){
+    localStorage.setItem('token',authToken); // variavel sistema padrao para salvar autorizaçoes
+  }
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {

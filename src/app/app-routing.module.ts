@@ -1,10 +1,11 @@
+import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 
 import { DomJqueryComponent } from './components/estudo/dom-jquery/dom-jquery.component';
 import { SubcategoriaCrudComponent } from './views/subcategoria-crud/subcategoria-crud.component';
-import {SubcategoriaDeleteComponent } from './components/subcategoria/subcategoria-delete/subcategoria-delete.component';
-import {SubcategoriaUpdateComponent } from './components/subcategoria/subcategoria-update/subcategoria-update.component';
-import {SubcategoriaCreateComponent } from './components/subcategoria/subcategoria-create/subcategoria-create.component';
+import { SubcategoriaDeleteComponent } from './components/subcategoria/subcategoria-delete/subcategoria-delete.component';
+import { SubcategoriaUpdateComponent } from './components/subcategoria/subcategoria-update/subcategoria-update.component';
+import { SubcategoriaCreateComponent } from './components/subcategoria/subcategoria-create/subcategoria-create.component';
 
 import { ImprimirComponent } from './components/ingresso/imprimir/imprimir.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
@@ -25,49 +26,48 @@ const routes: Routes = [
 
   {
     path: "",
-    component: HomeComponent
-  },
-  
-  {
-    path: "products",
-    component: ProductCrudComponent
-  },
+    component: HomeComponent, canActivate: [AuthGuard], children: [ // children: [ torna os outros caminho filho somente se o home esta autorizado consegue acessar os demais
+      {
+        path: "products",
+        component: ProductCrudComponent
+      },
 
-  {
-    path: "products/create",
-    component: ProductCreateComponent
-  },
+      {
+        path: "products/create",
+        component: ProductCreateComponent
+      },
 
-  {
-    path: "products/update/:id",
-    component: ProductUpdateComponent
+      {
+        path: "products/update/:id",
+        component: ProductUpdateComponent
 
-  },
+      },
 
-  {
-    path: "products/delete/:id",
-    component: ProductDeleteComponent
+      {
+        path: "products/delete/:id",
+        component: ProductDeleteComponent
 
-  },
+      },
 
-  {
-    path: "subcategorias",
-    component: SubcategoriaCrudComponent
-  },
+      {
+        path: "subcategorias",
+        component: SubcategoriaCrudComponent
+      },
 
-  {
-    path: "subcategorias/create",
-    component: SubcategoriaCreateComponent
-  },
+      {
+        path: "subcategorias/create",
+        component: SubcategoriaCreateComponent
+      },
 
-  {
-    path: "subcategorias/update/:id",
-    component: SubcategoriaUpdateComponent
-  },
+      {
+        path: "subcategorias/update/:id",
+        component: SubcategoriaUpdateComponent
+      },
 
-  {
-    path: "subcategorias/delete/:id",
-    component: SubcategoriaDeleteComponent
+      {
+        path: "subcategorias/delete/:id",
+        component: SubcategoriaDeleteComponent
+      }]
   },
   {
     path: "ingresso/imprimir",
