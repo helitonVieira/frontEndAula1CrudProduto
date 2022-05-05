@@ -50,6 +50,8 @@ import { SubcategoriaCreateComponent } from './components/subcategoria/subcatego
 import { MatSelectModule } from '@angular/material/select';
 import { DomJqueryComponent } from './components/estudo/dom-jquery/dom-jquery.component';
 import { LoginComponent } from './components/login/login.component';
+//import { ToastrModule } from 'ngx-toastr';
+import { timeout } from 'rxjs/operators';
 
 /*import { ForDirective } from './directives/for.directive';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
@@ -97,6 +99,10 @@ registerLocaleData(localePt);//passar para formato pt-BR
     MatSortModule,// ng generate @angular/material:table <components/product/product-read2
     MatSelectModule,
     ReactiveFormsModule,
+    /*ToastrModule.forRoot({ //mostrar msg na tela roda comando gitBash: npm i ngx-toastr --save
+      timeOut:4000,
+      closeButton:true,
+      progressBar:true})*/
   ],
   providers: [{
     provide:LOCALE_ID,//passar para formato pt-BR

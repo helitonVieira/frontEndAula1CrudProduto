@@ -26,9 +26,8 @@
             name="senha">
         </mat-form-field>
 
-        <button [disabled]="!validaCampor()" class="full-width mat-elevation-z4" mat-raised-button color="primary">
+        <button (click)="logar()" [disabled]="!validaCampor()" class="full-width mat-elevation-z4" mat-raised-button color="primary">
             Login
-        </button>
-        {{credenciais.email}}
+        </button>       
     </form>
 </div>

@@ -1,3 +1,4 @@
+import { LoginService } from './login.service';
 import { Credenciais } from './../../models/credenciais';
 import { HeaderService } from './../../components/template/header/header.service';
 import { Component, OnInit } from '@angular/core';
@@ -19,7 +20,9 @@ export class LoginComponent implements OnInit {
   email = new FormControl(null,Validators.email);
   senha = new FormControl(null,Validators.minLength(3));
 
-  constructor(private router: Router, private headerService: HeaderService) {
+  constructor(private router: Router, 
+    private headerService: HeaderService,
+    private loginService: LoginService) {
     headerService.headerData = {
       title: 'Tela Login',
       icon: 'login',
@@ -36,6 +39,11 @@ export class LoginComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  logar(){
+    this.loginService.showMessage('Login efetuado com sucesso!');
+    this.credenciais.senha ='';
   }
 
 }
