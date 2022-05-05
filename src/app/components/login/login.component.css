@@ -1,0 +1,40 @@
+.container{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFF;
+}
+
+.form {
+    width: 20rem;
+    margin: auto;
+    background-color: #3F51B5;
+    padding: 4rem 1rem;
+    border-radius: 1rem;
+    color: #FFF;
+}
+
+h1{
+    width: 100%;
+    text-align: center;
+    margin-top:-4rem;
+}
+
+img{
+    height: 13rem;
+    width: 100%;
+    margin-top:-4rem ;
+}
+
+.full-width{
+    width: 100%;   
+    background-color: #3b4bac;
+    color: #FFF;
+}
+
+button{
+    margin-top: 1.5rem;  
+    text-align: center;
+   
+}

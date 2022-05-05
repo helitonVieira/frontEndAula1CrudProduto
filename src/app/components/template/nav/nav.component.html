@@ -1,10 +1,12 @@
-<mat-sidenav-container class="container"> <!--https://material.angular.io/components/sidenav/api-->
-    <mat-sidenav class="sidenav" mode="side" opened 
-        fixedInViewport="true" fixedTopGap="64"><!--sidenav do css-->
+<mat-sidenav-container class="container">
+    <!--https://material.angular.io/components/sidenav/api-->
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <!--sidenav do css-->
         <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/" >
+            <a mat-list-item routerLink="/">
                 <i class="material-icons">
-                    home        <!--nome do icone no material-->
+                    home
+                    <!--nome do icone no material-->
                 </i>
                 Início
             </a>
@@ -33,19 +35,19 @@
                 <i class="material-icons">
                     laptop_chromebook
                 </i>
-               Estudo Dom JQuery
+                Estudo Dom JQuery
             </a>
 
             <a mat-list-item routerLink="/login">
                 <i class="material-icons">
                     login
                 </i>
-               Login
+                Login
             </a>
 
         </mat-nav-list>
     </mat-sidenav>
-    <mat-sidenav-content class= "content">
+    <mat-sidenav-content class="content">
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
