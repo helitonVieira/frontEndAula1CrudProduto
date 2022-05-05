@@ -6,12 +6,24 @@
 
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>E-mail</mat-label>
-            <input [(ngModel)]="credenciais.email" name="email" matInput placeholder="Ex. nome@mail.com"  name="email">
+            <input 
+            [formControl]="email"
+            required 
+            [(ngModel)]="credenciais.email" 
+            name="email" 
+            matInput placeholder="Ex. nome@mail.com"  
+            name="email">
         </mat-form-field>
 
         <mat-form-field class="full-width" appearance="fill">
             <mat-label>Senha</mat-label>
-            <input [(ngModel)]="credenciais.senha" name="senha" type="password" matInput placeholder="Ex. 123"  name="senha">
+            <input 
+            [formControl]="email"
+            required 
+            [(ngModel)]="credenciais.senha" 
+            name="senha" type="password" 
+            matInput placeholder="Ex. 123"  
+            name="senha">
         </mat-form-field>
 
         <button class="full-width mat-elevation-z4" mat-raised-button color="primary">
