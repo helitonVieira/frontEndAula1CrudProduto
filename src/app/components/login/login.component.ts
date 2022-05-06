@@ -12,15 +12,15 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  credenciais : Credenciais = {
-    email:'',
-    senha:''
+  credenciais: Credenciais = {
+    email: '',
+    senha: ''
   }
 
-  email = new FormControl(null,Validators.email);
-  senha = new FormControl(null,Validators.minLength(3));
+  email = new FormControl(null, Validators.email);
+  senha = new FormControl(null, Validators.minLength(3));
 
-  constructor(private router: Router, 
+  constructor(private router: Router,
     private headerService: HeaderService,
     private loginService: LoginService) {
     headerService.headerData = {
@@ -41,14 +41,13 @@ export class LoginComponent implements OnInit {
     }
   }
 
-  logar(){
-    
+  logar() {    
     this.loginService.authenticate(this.credenciais).subscribe(resposta => {
       this.loginService.successLogin(resposta.headers.get('Authorization').substring(7));
       this.loginService.showMessage('Login efetuado com sucesso!');
-      this.router.navigate(['/home'])//voltar para tela principal
+      this.router.navigate(['home'])//voltar para tela principal
     })
-   
+
     //this.credenciais.senha ='';
   }
 

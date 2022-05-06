@@ -1,3 +1,4 @@
+import { NavComponent } from './components/template/nav/nav.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 
@@ -19,65 +20,25 @@ import { HomeComponent } from "./views/home/home.component";
 import { ProductCrudComponent } from "./views/product-crud/product-crud.component";
 
 const routes: Routes = [
-  {
-    path: "login",
-    component: LoginComponent
-  },
+  { path: "login", component: LoginComponent },
 
   {
-    path: "",
-    component: HomeComponent, canActivate: [AuthGuard], children: [ // children: [ torna os outros caminho filho somente se o home esta autorizado consegue acessar os demais
-      {
-        path: "products",
-        component: ProductCrudComponent
-      },
+    path: "", component: NavComponent, canActivate: [AuthGuard], children: [ // children: [ torna os outros caminho filho somente se o home esta autorizado consegue acessar os demais
+     { path: "home", component: HomeComponent },
+      { path: "products", component: ProductCrudComponent },
+      { path: "products/create", component: ProductCreateComponent },
+      { path: "products/update/:id", component: ProductUpdateComponent },
+      { path: "products/delete/:id", component: ProductDeleteComponent },
 
-      {
-        path: "products/create",
-        component: ProductCreateComponent
-      },
-
-      {
-        path: "products/update/:id",
-        component: ProductUpdateComponent
-
-      },
-
-      {
-        path: "products/delete/:id",
-        component: ProductDeleteComponent
-
-      },
-
-      {
-        path: "subcategorias",
-        component: SubcategoriaCrudComponent
-      },
-
-      {
-        path: "subcategorias/create",
-        component: SubcategoriaCreateComponent
-      },
-
-      {
-        path: "subcategorias/update/:id",
-        component: SubcategoriaUpdateComponent
-      },
-
-      {
-        path: "subcategorias/delete/:id",
-        component: SubcategoriaDeleteComponent
-      }]
+      { path: "subcategorias", component: SubcategoriaCrudComponent },
+      { path: "subcategorias/create", component: SubcategoriaCreateComponent },
+      { path: "subcategorias/update/:id", component: SubcategoriaUpdateComponent },
+      { path: "subcategorias/delete/:id", component: SubcategoriaDeleteComponent },
+    ]
   },
-  {
-    path: "ingresso/imprimir",
-    component: ImprimirComponent
-  },
+  { path: "ingresso/imprimir", component: ImprimirComponent },
 
-  {
-    path: "estudo/domjquery",
-    component: DomJqueryComponent
-  },
+  { path: "estudo/domjquery", component: DomJqueryComponent },
 ];
 
 @NgModule({

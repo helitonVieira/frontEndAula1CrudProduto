@@ -38,7 +38,7 @@
                 Estudo Dom JQuery
             </a>
 
-            <a mat-list-item routerLink="/login">
+            <a mat-list-item (click)="logout()">
                 <i class="material-icons">
                     login
                 </i>
@@ -48,6 +48,12 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">
+        <app-header></app-header>
+        <app-footer></app-footer>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
+
+
+
+

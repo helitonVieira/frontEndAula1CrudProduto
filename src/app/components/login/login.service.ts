@@ -1,7 +1,10 @@
+import { JwtHelperService } from '@auth0/angular-jwt';
+
 import { Credenciais } from './../../models/credenciais';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Injectable } from '@angular/core';
+
 
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
@@ -13,7 +16,9 @@ import { map, catchError } from "rxjs/operators";
 
 export class LoginService { //nome padrao AuthService
 
-  baseUrl = "/login";
+  baseUrl = "/api/login";
+
+  jwtService: JwtHelperService = new JwtHelperService();
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
@@ -27,8 +32,20 @@ export class LoginService { //nome padrao AuthService
     );
   }    
 
+  isAuthenticated() {
+    let token = localStorage.getItem('token')
+    if(token != null) {
+      return !this.jwtService.isTokenExpired(token)
+    }
+    return false
+  }
+
   successLogin(authToken: string){
     localStorage.setItem('token',authToken); // variavel sistema padrao para salvar autorizaçoes
+  }
+
+  logout(){
+    localStorage.clear();
   }
 
   showMessage(msg: string, isError: boolean = false): void {
@@ -39,6 +56,7 @@ export class LoginService { //nome padrao AuthService
       panelClass: isError ? ["msg-error"] : ["msg-success"],
     });
   }
+
 
   errorHandler(e: any): Observable<any> {
     this.showMessage("Ocorreu um erro!", true);

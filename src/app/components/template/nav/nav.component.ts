@@ -1,3 +1,5 @@
+import { LoginService } from './../../login/login.service';
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+    private loginService: LoginService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {   
+  }
+
+  logout(){
+    this.router.navigate(['login'])
+    this.loginService.logout();
+   // this.toast.info('Logout realizado com sucesso', 'Logout')
   }
 
 }

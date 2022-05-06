@@ -106,7 +106,7 @@ registerLocaleData(localePt);//passar para formato pt-BR
   ],
   providers: [{
     provide:LOCALE_ID,//passar para formato pt-BR
-    useValue : 'pt-BR'//passar para formato pt-BR   
+    useValue : 'pt-BR'//passar para formato pt-BR       
   }],
  
   bootstrap: [AppComponent]
