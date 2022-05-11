@@ -18,7 +18,7 @@ export class ProductService {
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {
       duration: 3000,
-      horizontalPosition: "right",
+      horizontalPosition: "right" ,
       verticalPosition: "top",
       panelClass: isError ? ["msg-error"] : ["msg-success"],
     });
