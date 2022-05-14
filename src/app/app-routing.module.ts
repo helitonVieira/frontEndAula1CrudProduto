@@ -1,3 +1,4 @@
+import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { AuthGuard } from './auth/auth.guard';
 import { LoginComponent } from './components/login/login.component';
@@ -23,8 +24,8 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
 
   {
-    path: "", component: NavComponent, canActivate: [AuthGuard], children: [ // children: [ torna os outros caminho filho somente se o home esta autorizado consegue acessar os demais
-     { path: "home", component: HomeComponent },
+    path: "", component: HomeComponent, canActivate: [AuthGuard], children: [ // children: [ torna os outros caminho filho somente se o home esta autorizado consegue acessar os demais
+      { path: "home", component: HomeComponent },
       { path: "products", component: ProductCrudComponent },
       { path: "products/create", component: ProductCreateComponent },
       { path: "products/update/:id", component: ProductUpdateComponent },
@@ -36,6 +37,8 @@ const routes: Routes = [
       { path: "subcategorias/delete/:id", component: SubcategoriaDeleteComponent },
     ]
   },
+  { path: "login/cliente/create", component: ClienteCreateComponent },
+
   { path: "ingresso/imprimir", component: ImprimirComponent },
 
   { path: "estudo/domjquery", component: DomJqueryComponent },
