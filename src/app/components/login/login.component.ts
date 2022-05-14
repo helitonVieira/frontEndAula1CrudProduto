@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
     this.loginService.authenticate(this.credenciais).subscribe(resposta => {
       this.loginService.successLogin(resposta.headers.get('Authorization').substring(7));
       this.loginService.showMessage('Login efetuado com sucesso!');
-      this.router.navigate([''])//voltar para tela principal
+      this.router.navigate(['home'])//voltar para tela principal
     })
 
     //this.credenciais.senha =''; 

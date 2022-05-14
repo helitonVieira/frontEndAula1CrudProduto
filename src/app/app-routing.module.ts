@@ -1,3 +1,4 @@
+import { HomeCrudComponent } from './views/home-crud/home-crud.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { NavComponent } from './components/template/nav/nav.component';
 import { AuthGuard } from './auth/auth.guard';
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: "login", component: LoginComponent },
 
   {
-    path: "", component: HomeComponent, canActivate: [AuthGuard], children: [ // children: [ torna os outros caminho filho somente se o home esta autorizado consegue acessar os demais
+    path: "", component: HomeCrudComponent, canActivate: [AuthGuard], children: [ // children: [ torna os outros caminho filho somente se o home esta autorizado consegue acessar os demais
       { path: "home", component: HomeComponent },
       { path: "products", component: ProductCrudComponent },
       { path: "products/create", component: ProductCreateComponent },
