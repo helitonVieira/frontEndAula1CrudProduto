@@ -11,7 +11,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class ProductService {
-  baseUrl = "/api/produto";
+  baseUrl = "/api/produtos";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 

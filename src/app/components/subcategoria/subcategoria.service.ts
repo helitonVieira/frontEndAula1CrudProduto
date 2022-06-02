@@ -11,7 +11,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class SubcategoriaService {
-  baseUrl = "/api/subcategoria";
+  baseUrl = "/api/subcategorias";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
