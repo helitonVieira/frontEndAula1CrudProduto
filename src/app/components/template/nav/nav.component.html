@@ -3,7 +3,7 @@
     <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
         <!--sidenav do css-->
         <mat-nav-list class="nav-list">
-            <a mat-list-item routerLink="/">
+            <a mat-list-item routerLink="/home">
                 <i class="material-icons">
                     home
                     <!--nome do icone no material-->
@@ -48,11 +48,9 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content class="content">
-        <app-header></app-header>
-        <app-footer></app-footer>
-        <router-outlet></router-outlet>
+            <router-outlet></router-outlet>
     </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> 
 
 
 

@@ -52,6 +52,10 @@ import { DomJqueryComponent } from './components/estudo/dom-jquery/dom-jquery.co
 import { LoginComponent } from './components/login/login.component';
 //import { ToastrModule } from 'ngx-toastr';
 import { timeout } from 'rxjs/operators';
+import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
+import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
+import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
+import { HomeCrudComponent } from './views/home-crud/home-crud.component';
 
 /*import { ForDirective } from './directives/for.directive';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
@@ -78,7 +82,10 @@ registerLocaleData(localePt);//passar para formato pt-BR
     SubcategoriaDeleteComponent,
     SubcategoriaCreateComponent,
     DomJqueryComponent,
-    LoginComponent
+    LoginComponent,
+    ClienteCrudComponent,
+    ClienteCreateComponent,
+    HomeCrudComponent
   ],
   imports: [
     BrowserModule, 
@@ -104,7 +111,7 @@ registerLocaleData(localePt);//passar para formato pt-BR
       closeButton:true,
       progressBar:true})*/
   ],
-  providers: [{
+  providers: [AuthInterceptorProvider,{
     provide:LOCALE_ID,//passar para formato pt-BR
     useValue : 'pt-BR'//passar para formato pt-BR       
   }],

@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
       this.router.navigate(['home'])//voltar para tela principal
     })
 
-    //this.credenciais.senha ='';
+    //this.credenciais.senha =''; 
   }
 
 }

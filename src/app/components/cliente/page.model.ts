@@ -1,8 +1,7 @@
-import { Subcategoria } from './subcategoria.model';
+import { ClienteNewDTO } from './cliente.model';
 
-
-export interface Page {
-    content: Subcategoria[];
+export interface PageCliente {
+    content: ClienteNewDTO[];
     pageable: string;
     totalElements: number;
     last: boolean;

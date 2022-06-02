@@ -11,14 +11,14 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class ProductService {
-  baseUrl = "/api/produto";
+  baseUrl = "/api/produtos";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
   showMessage(msg: string, isError: boolean = false): void {
     this.snackBar.open(msg, "X", {
       duration: 3000,
-      horizontalPosition: "right",
+      horizontalPosition: "right" ,
       verticalPosition: "top",
       panelClass: isError ? ["msg-error"] : ["msg-success"],
     });
