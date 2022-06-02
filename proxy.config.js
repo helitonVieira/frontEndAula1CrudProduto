@@ -2,7 +2,7 @@
   const proxy = [
     {
       context: ['/api'],
-      target: 'https://app-vsystem.herokuapp.com',  //'http://localhost:8090',
+      target: 'https://app-vsystem.herokuapp.com',
       secure: false,
       logLevel: 'debug',
       pathRewrite: {'^/api' : ''}
