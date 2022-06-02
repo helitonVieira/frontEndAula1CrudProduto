@@ -1,6 +1,6 @@
+import { Subcategoria } from './../subCategoria.model';
 import { Router, ActivatedRoute } from "@angular/router";
 import { SubcategoriaService } from "./../subcategoria.service";
-import { Subcategoria } from "./../subcategoria.model";
 import { Component, OnInit } from "@angular/core";
 
 @Component({

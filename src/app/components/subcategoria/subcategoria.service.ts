@@ -1,8 +1,9 @@
+import { Subcategoria } from './subCategoria.model';
 import { Page } from './page.model';
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { HttpClient, HttpParams } from "@angular/common/http";
-import { Subcategoria} from '../subcategoria/subcategoria.model';
+
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 
