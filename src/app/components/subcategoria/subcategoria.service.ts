@@ -1,4 +1,4 @@
-import { Subcategoria } from './../../models/subCategoria.model';
+import { Subcategoria } from './subCategoria.model';
 
 import { Page } from './page.model';
 import { Injectable } from "@angular/core";

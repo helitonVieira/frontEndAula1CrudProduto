@@ -1,4 +1,5 @@
-import { Subcategoria } from './../../models/subCategoria.model';
+import { Subcategoria } from './subcategoria.model';
+
 
 export interface Page {
     content: Subcategoria[];
