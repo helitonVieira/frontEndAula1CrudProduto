@@ -1,4 +1,5 @@
-import { Subcategoria } from './subCategoria.model';
+import { Subcategoria } from './../../models/subCategoria.model';
+
 export interface Page {
     content: Subcategoria[];
     pageable: string;

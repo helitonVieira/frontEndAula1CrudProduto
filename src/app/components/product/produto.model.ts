@@ -1,4 +1,5 @@
-import { Subcategoria } from './../subcategoria/subCategoria.model';
+import { Subcategoria } from './../../models/subCategoria.model';
+
 export interface Produto {
     id?: number
     nome: string

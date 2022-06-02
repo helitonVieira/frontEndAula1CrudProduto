@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { Subcategoria } from './../subCategoria.model';
+import { Subcategoria } from './../../../models/subCategoria.model';
 import { MatSort } from '@angular/material/sort';
 import { SubcategoriaService } from './../subcategoria.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
