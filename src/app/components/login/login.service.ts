@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment.prod';
 import { JwtHelperService } from '@auth0/angular-jwt';
 
 import { Credenciais } from './../../models/credenciais';
@@ -16,7 +17,7 @@ import { map, catchError } from "rxjs/operators";
 
 export class LoginService { //nome padrao AuthService
 
-  baseUrl = "/api/login";
+  baseUrl = `${environment.api_url}/login`;
 
   jwtService: JwtHelperService = new JwtHelperService();
 

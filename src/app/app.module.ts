@@ -1,4 +1,3 @@
-
 import { CustomPaginator } from './components/subcategoria/custom-paginator';
 import { NgModule, LOCALE_ID } from '@angular/core';// LOCALE_ID passar para formato pt-BR
 import { BrowserModule } from '@angular/platform-browser';

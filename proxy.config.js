@@ -1,12 +1,12 @@
   //arquivo configuração para comunicar com backend porta 8080 manda endereço sem o /api
-  const proxy = [
+  const PROXY_CONFIG = [
     {
-      context: ['/api'],
-      target: 'https://app-vsystem.herokuapp.com',  //'http://localhost:8090',
-      secure: false,
+      context: ['/api'], // caminho que  começa com /api adicionar o target antes 
+      target: 'http://app-vsystem.herokuapp.com/',
+      secure: true, // se usar https tem que colocar true
       logLevel: 'debug',
-      pathRewrite: {'^/api' : ''}
+      pathRewrite: {'^/api' : ''}//retirar para enviar
     }
   ];
 
-  module.exports = proxy;   
+  module.exports = PROXY_CONFIG;   
