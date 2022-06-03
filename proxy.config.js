@@ -2,7 +2,7 @@
   const PROXY_CONFIG = [
     {
       context: ['/api'], // caminho que  começa com /api adicionar o target antes 
-      target: 'http://app-vsystem.herokuapp.com/',
+      target: 'http://localhost:8090',
       secure: true, // se usar https tem que colocar true
       logLevel: 'debug',
       pathRewrite: {'^/api' : ''}//retirar para enviar
