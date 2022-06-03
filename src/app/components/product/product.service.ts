@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment.prod';
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
 import { HttpClient } from "@angular/common/http";
@@ -11,7 +12,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class ProductService {
-  baseUrl = "/api/produtos";
+  baseUrl = `${environment.api_url}/produtos`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 

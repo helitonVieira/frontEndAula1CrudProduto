@@ -1,6 +1,6 @@
 import { SubcategoriaService } from './../../subcategoria/subcategoria.service';
-import { Subcategoria } from './../../subcategoria/subcategoria.model'; 
- 
+import { Subcategoria } from './../../../models/subcategoria.model';
+
 import { Produto } from './../produto.model';
 import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
