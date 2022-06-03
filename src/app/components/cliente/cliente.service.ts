@@ -1,3 +1,5 @@
+import { environment } from './../../../environments/environment';
+
 import { HttpParams } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { ClienteNewDTO } from './cliente.model';
@@ -16,7 +18,7 @@ import { map, catchError } from "rxjs/operators";
 
 export class ClienteService {
 
-  baseUrl = "/api/clientes";
+  baseUrl = `${environment.api_url}/clientes`;
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 
