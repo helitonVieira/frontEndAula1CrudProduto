@@ -1,3 +1,4 @@
+import { environment } from './../../../environments/environment';
 import { Subcategoria } from './../../models/subcategoria.model';
 
 import { Page } from './page.model';
@@ -13,7 +14,7 @@ import { map, catchError } from "rxjs/operators";
   providedIn: "root",
 })
 export class SubcategoriaService {
-  baseUrl = "/api/subcategorias";
+  baseUrl = `${environment.api_url}/subcategorias`;  
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) { }
 

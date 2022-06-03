@@ -1,4 +1,5 @@
 export const environment = {
   production: true,
-  api_url:'http://app-vsystem.herokuapp.com'
+  debugger: false,
+  api_url:'https://app-vsystem.herokuapp.com'
 };
