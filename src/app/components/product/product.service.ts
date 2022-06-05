@@ -1,12 +1,16 @@
-import { environment } from './../../../environments/environment.prod';
+
+import { environment } from './../../../environments/environment';
 import { Injectable } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import { HttpClient } from "@angular/common/http";
+
+//import { Page } from './page.model';
+import { HttpClient, HttpParams} from "@angular/common/http";
 
 import { Produto } from "./produto.model";
 
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
+import { Page } from './page.model';
 
 @Injectable({
   providedIn: "root",
@@ -36,6 +40,19 @@ export class ProductService {
     return this.http.get<Produto[]>(this.baseUrl).pipe(
      map((obj) => obj),
       catchError((e) => this.errorHandler(e))
+    );
+  }
+
+  page(page,linesPerPage,orderBy,direction): Observable<Page> {
+    return this.http.get<Page>(this.baseUrl + '/page', {
+      params: new HttpParams()
+        .set('page', page)
+        .set('linesPerPage', linesPerPage)
+        .set('orderBy', orderBy.toString())        
+        .set('direction', direction.toString())
+    }).pipe(
+      map(res => {
+        return res})
     );
   }
 

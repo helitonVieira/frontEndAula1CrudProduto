@@ -30,9 +30,9 @@ export class SubcategoriaReadComponent implements OnInit {
   searchKey: String
 
    // MatPaginator Inputs
-   length:number =  2;
-   pageSize :number = 2;
-   pageSizeOptions: number[] = [2, 4, 6,10];
+   length:number =  5;
+   pageSize :number = 5;
+   pageSizeOptions: number[] = [5, 10, 15,20];
    totalElements:number;
    pageIndex:number = 0;
  
@@ -45,7 +45,7 @@ export class SubcategoriaReadComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.subcategoriaService.page(0,2,'descricao','ASC')
+    this.subcategoriaService.page(0,5,'descricao','ASC')
     .subscribe( 
       subcategorias => {
     

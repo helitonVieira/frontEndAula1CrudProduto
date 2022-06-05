@@ -72,5 +72,13 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 
   </table>
-  <mat-paginator [pageSizeOptions]="[2, 4, 6]" showFirstLastButtons></mat-paginator>
+  
+  <mat-paginator id="teste"
+[pageIndex]="pageIndex"
+[length]="totalElements"
+[pageSize]="pageSize"
+[pageSizeOptions]="pageSizeOptions"
+(page)="pageEvent = $event ; carregaPaginaPaginada()"> <!--chamada 2 metodo carregar pageEvent e carregaPaginaPaginada-->
+</mat-paginator> 
+
 </div>

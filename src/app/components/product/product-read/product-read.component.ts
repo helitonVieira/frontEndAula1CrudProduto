@@ -6,6 +6,8 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
+import { Page} from '../page.model';
+import { PageEvent } from "@angular/material/paginator";
 
 @Component({
   selector: 'app-product-read',
@@ -23,21 +25,52 @@ export class ProductReadComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
+  page: Page
   searchKey: String
+
+   // MatPaginator Inputs
+   length:number =  5;
+   pageSize :number = 5;
+   pageSizeOptions: number[] = [5, 10, 15,20];
+   totalElements:number;
+   pageIndex:number = 0;
+ 
+   // MatPaginator Output
+   pageEvent: PageEvent;
 
     constructor(private productService: ProductService,
       private router: Router) { }  
 
   ngOnInit(): void {
-    this.productService.read().subscribe(products => {
-      this.products = products
 
-      this.dataSource = new MatTableDataSource<Produto>(products)
+    this.productService.page(0,5,'nome','ASC')
+    .subscribe(
+      products => {
 
+     this.page = products
+      this.products = products.content
+      this.dataSource = new MatTableDataSource<Produto>(products.content)
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
+      this.totalElements = products.totalElements
+
     })
   }
+
+  carregaPaginaPaginada():void {
+    //this.subcategoriaService.showMessage('pagina '+ this.pageIndex + 'qtdItem  '+ this.pageSize + "oi mundo" + x, false)
+       
+      this.productService.page(this.pageEvent.pageIndex,this.pageEvent.pageSize,'nome','ASC')
+      .subscribe( 
+        products => {
+      this.products = products.content
+      this.dataSource = new MatTableDataSource<Produto>(products.content)
+      this.dataSource.sort = this.sort;
+      this.totalElements = products.totalElements
+      
+    })
+  }
+
 
   navigateCreate(): void {
     this.router.navigate(['/products/create'])

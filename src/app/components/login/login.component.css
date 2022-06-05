@@ -13,6 +13,7 @@
     padding: 4rem 1rem;
     border-radius: 1rem;
     color: #FFF;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(112,46,168,1) 0%, rgba(0,212,255,1) 100%);
 }
 
 h1{
@@ -30,7 +31,7 @@ img{
 .full-width{
     width: 100%;   
     background-color: #3b4bac;
-   
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(112,46,168,1) 0%, rgba(0,212,255,1) 100%);
 }
 
 button{

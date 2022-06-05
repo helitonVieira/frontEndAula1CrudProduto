@@ -1,6 +1,9 @@
-<mat-sidenav-container class="container">
+<mat-drawer-container class="container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side">
+ 
+<!--<mat-sidenav-container class="container"> -->
     <!--https://material.angular.io/components/sidenav/api-->
-    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+   <!-- <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">-->
         <!--sidenav do css-->
         <mat-nav-list class="nav-list">
             <a mat-list-item routerLink="/home">
@@ -46,11 +49,21 @@
             </a>
 
         </mat-nav-list>
-    </mat-sidenav>
-    <mat-sidenav-content class="content">
-            <router-outlet></router-outlet>
-    </mat-sidenav-content>
-</mat-sidenav-container> 
+    <!--</mat-sidenav>-->
+</mat-drawer>
+
+<div class="sidenav-content">
+    <app-header></app-header>
+     <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
+        <i class="material-icons">
+            menu
+            <!--nome do icone no material-->
+        </i>
+    </button>
+    <router-outlet></router-outlet>
+ </div>
+<!--</mat-sidenav-container> -->
+</mat-drawer-container>
 
 
 

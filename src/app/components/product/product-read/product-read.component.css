@@ -1,6 +1,11 @@
 table {
     width: 100%;
+    margin-top:10px;
 }
+
+mat-form-field {
+    width: 100%;
+ }
 
 .edit {
     margin-right: 10px;
@@ -20,12 +25,14 @@ table {
 }
 
 .search-div{
-    margin:2px;
+    width: 90%;
+    margin: auto;
+    
 }
 
 .search-form-field{
-    width: 60%;
-    margin-left: 10px;
+    width: 70%;
+    margin-left: 10px; 
     padding: 5px 10px;
     background-color: white;
     border-radius : 5px;
