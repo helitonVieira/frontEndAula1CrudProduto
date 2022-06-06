@@ -3,15 +3,17 @@
     <form>
         <mat-form-field>
             <input matInput placeholder="Descrição"
+            [formControl]="descricao"
+            required 
                 [(ngModel)]="subcategoria.descricao" name="descricao">
         </mat-form-field>  
 		
     </form>
-    <button mat-raised-button (click)="createSubcategoria()" color="primary">
+    <button mat-raised-button (click)="createSubcategoria()" [disabled]="!validaCampor()">
         Salvar
     </button>
     
-    <button mat-raised-button (click)="cancel()">
+    <button mat-raised-button (click)="cancel()" >
         Cancelar
     </button>
 </mat-card>

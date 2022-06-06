@@ -1,15 +1,13 @@
 import { Subcategoria } from './../../../models/subcategoria.model';
+import { SubcategoriaService } from './../subcategoria.service';
+
 import { Router } from '@angular/router';
 import { MatSort } from '@angular/material/sort';
-import { SubcategoriaService } from './../subcategoria.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Page} from '../page.model';
 import { PageEvent } from "@angular/material/paginator";
-
-
-
 @Component({
   selector: 'app-subcategoria-read',
   templateUrl: './subcategoria-read.component.html',

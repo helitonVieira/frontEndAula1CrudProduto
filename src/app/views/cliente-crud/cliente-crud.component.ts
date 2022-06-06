@@ -11,7 +11,7 @@ export class ClienteCrudComponent implements OnInit {
 
   constructor(private router: Router,private headerService: HeaderService) { 
     headerService.headerData = {
-      title: 'Cadastro de Usuario',
+      title: 'Usuário',
       icon: 'client',
       routeUrl: '/cliente'
     }

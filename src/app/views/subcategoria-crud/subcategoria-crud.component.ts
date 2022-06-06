@@ -11,7 +11,7 @@ export class SubcategoriaCrudComponent implements OnInit {
 
   constructor(private router: Router, private headerService: HeaderService) {
     headerService.headerData = {
-      title: 'Cadastro de Subcategorias',
+      title: 'Subcategorias',
       icon: 'storefront',
       routeUrl: '/subcategoria'
     }

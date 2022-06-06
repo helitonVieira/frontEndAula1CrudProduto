@@ -1,3 +1,4 @@
+import { PrevendaCrudComponent } from './views/prevenda-crud/prevenda-crud.component';
 import { HomeCrudComponent } from './views/home-crud/home-crud.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { NavComponent } from './components/template/nav/nav.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
   {
     path: "", component: HomeCrudComponent, canActivate: [AuthGuard], children: [ // children: [ torna os outros caminho filho somente se o home esta autorizado consegue acessar os demais
       { path: "home", component: HomeComponent },
+      
       { path: "products", component: ProductCrudComponent },
       { path: "products/create", component: ProductCreateComponent },
       { path: "products/update/:id", component: ProductUpdateComponent },
@@ -36,6 +38,8 @@ const routes: Routes = [
       { path: "subcategorias/create", component: SubcategoriaCreateComponent },
       { path: "subcategorias/update/:id", component: SubcategoriaUpdateComponent },
       { path: "subcategorias/delete/:id", component: SubcategoriaDeleteComponent },
+
+      { path: "prevendas", component: PrevendaCrudComponent },
     ]
   },
   { path: "login/cliente/create", component: ClienteCreateComponent },

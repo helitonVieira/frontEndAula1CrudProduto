@@ -46,6 +46,7 @@ import { SubcategoriaReadComponent } from './components/subcategoria/subcategori
 import { SubcategoriaUpdateComponent } from './components/subcategoria/subcategoria-update/subcategoria-update.component';
 import { SubcategoriaDeleteComponent } from './components/subcategoria/subcategoria-delete/subcategoria-delete.component';
 import { SubcategoriaCreateComponent } from './components/subcategoria/subcategoria-create/subcategoria-create.component'; // ng generate @angular/material:table components/product/product-head2
+
 import { MatSelectModule } from '@angular/material/select';
 import { DomJqueryComponent } from './components/estudo/dom-jquery/dom-jquery.component';
 import { LoginComponent } from './components/login/login.component';
@@ -55,6 +56,8 @@ import { AuthInterceptorProvider } from './interceptors/auth.interceptor';
 import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { HomeCrudComponent } from './views/home-crud/home-crud.component';
+import { PreVendaReadComponent } from './components/pre-venda/pre-venda-read/pre-venda-read.component';
+import { PrevendaCrudComponent } from './views/prevenda-crud/prevenda-crud.component';
 
 /*import { ForDirective } from './directives/for.directive';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
@@ -68,6 +71,7 @@ registerLocaleData(localePt);//passar para formato pt-BR
     FooterComponent,
     NavComponent,
     HomeComponent,
+    
     ProductCrudComponent,
     ProductCreateComponent,
     ProductReadComponent,
@@ -75,16 +79,20 @@ registerLocaleData(localePt);//passar para formato pt-BR
     ProductDeleteComponent,
 
     ImprimirComponent,
+    
     SubcategoriaCrudComponent,
     SubcategoriaReadComponent,
     SubcategoriaUpdateComponent,
     SubcategoriaDeleteComponent,
     SubcategoriaCreateComponent,
+    
     DomJqueryComponent,
     LoginComponent,
     ClienteCrudComponent,
     ClienteCreateComponent,
-    HomeCrudComponent
+    HomeCrudComponent,
+    PreVendaReadComponent,
+    PrevendaCrudComponent
   ],
   imports: [
     BrowserModule, 

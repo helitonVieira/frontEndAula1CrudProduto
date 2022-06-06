@@ -1,5 +1,5 @@
+import { ProdutoService } from './../produto.service';
 import { Router, ActivatedRoute } from "@angular/router";
-import { ProductService } from "./../product.service";
 import { Produto } from "./../produto.model";
 import { Component, OnInit } from "@angular/core";
 
@@ -12,7 +12,7 @@ export class ProductDeleteComponent implements OnInit {
   product: Produto;
 
   constructor(
-    private productService: ProductService,
+    private productService: ProdutoService,
     private router: Router,
     private route: ActivatedRoute
   ) {}

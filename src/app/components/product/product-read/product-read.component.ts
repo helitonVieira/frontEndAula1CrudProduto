@@ -1,14 +1,13 @@
-import { Router } from '@angular/router';
-import { ProductService } from './../product.service';
+import { ProdutoService } from './../produto.service';
 import { Produto } from './../produto.model';
-import { Component, OnInit, ViewChild } from '@angular/core';
 
+import { Router } from '@angular/router';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatPaginator } from '@angular/material/paginator';
 import { Page} from '../page.model';
 import { PageEvent } from "@angular/material/paginator";
-
 @Component({
   selector: 'app-product-read',
   templateUrl: './product-read.component.html',
@@ -38,7 +37,7 @@ export class ProductReadComponent implements OnInit {
    // MatPaginator Output
    pageEvent: PageEvent;
 
-    constructor(private productService: ProductService,
+    constructor(private productService: ProdutoService,
       private router: Router) { }  
 
   ngOnInit(): void {

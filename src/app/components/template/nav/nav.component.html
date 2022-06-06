@@ -15,53 +15,46 @@
             </a>
 
             <a mat-list-item routerLink="/subcategorias">
-                <i class="material-icons">
-                    toc
-                </i>
+                <i class="material-icons"> toc  </i>
                 Subcategoria
             </a>
 
             <a mat-list-item routerLink="/products">
-                <i class="material-icons">
-                    storefront
-                </i>
+                <i class="material-icons"> storefront </i>
                 Produtos
+            </a> PreVendaReadComponent
+
+            <a mat-list-item routerLink="/prevendas">
+                <i class="material-icons"> shopping_cart_checkout </i>
+                Pré Vendas
             </a>
+
             <a mat-list-item routerLink="ingresso/imprimir">
-                <i class="material-icons">
-                    local_printshop
-                </i>
+                <i class="material-icons"> local_printshop </i>
                 Imprimir Ingresso
             </a>
 
             <a mat-list-item routerLink="estudo/domjquery">
-                <i class="material-icons">
-                    laptop_chromebook
-                </i>
+                <i class="material-icons"> laptop_chromebook </i>
                 Estudo Dom JQuery
             </a>
 
             <a mat-list-item (click)="logout()">
-                <i class="material-icons">
-                    login
-                </i>
+                <i class="material-icons"> login </i>
                 Login
             </a>
 
         </mat-nav-list>
     <!--</mat-sidenav>-->
-</mat-drawer>
+    </mat-drawer>
 
-<div class="sidenav-content">
-    <app-header></app-header>
-     <button class="menu mat-elevation-z8" (click)="drawer.toggle()" mat-icon-button>
-        <i class="material-icons">
-            menu
-            <!--nome do icone no material-->
-        </i>
-    </button>
-    <router-outlet></router-outlet>
- </div>
+    <div class="sidenav-content">
+        <app-header></app-header>
+        <button class="menu mat-elevation-z4" (click)="drawer.toggle()" mat-icon-button>
+            <i class="material-icons"> menu </i>
+        </button>
+        <router-outlet></router-outlet>
+    </div>
 <!--</mat-sidenav-container> -->
 </mat-drawer-container>
 

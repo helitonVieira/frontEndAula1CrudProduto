@@ -1,10 +1,13 @@
+import { ProdutoService } from './../produto.service';
+
 import { SubcategoriaService } from './../../subcategoria/subcategoria.service';
 import { Subcategoria } from './../../../models/subcategoria.model';
 
 import { Produto } from './../produto.model';
-import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-product-create',
@@ -21,8 +24,11 @@ export class ProductCreateComponent implements OnInit {
     preco: null
   }
 
+  nome = new FormControl(null, Validators.minLength(2));
+  subcategoria = new FormControl(null, Validators.minLength(2));
+  preco = new FormControl(null, Validators.minLength(1));
 
-  constructor(private productService: ProductService,
+  constructor(private produtoService: ProdutoService,
     private subcategoriaService: SubcategoriaService,
     private router: Router) { }
 
@@ -37,8 +43,8 @@ export class ProductCreateComponent implements OnInit {
     this.produto.nome = this.produto.nome.toUpperCase()//salvar tudo em maiusculo
 
 
-    this.productService.create(this.produto).subscribe(() => {
-      this.productService.showMessage('Produto criado!')
+    this.produtoService.create(this.produto).subscribe(() => {
+      this.produtoService.showMessage('Produto criado!')
       this.router.navigate(['/products'])//voltar para tela principal
     })
 
@@ -46,5 +52,13 @@ export class ProductCreateComponent implements OnInit {
 
   cancel(): void {
     this.router.navigate(['/products'])
+  }
+
+  validaCampor(): boolean {
+    if (this.nome.valid && this.subcategoria.valid && this.preco.valid) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }
