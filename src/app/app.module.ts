@@ -58,6 +58,10 @@ import { ClienteCreateComponent } from './components/cliente/cliente-create/clie
 import { HomeCrudComponent } from './views/home-crud/home-crud.component';
 import { PreVendaReadComponent } from './components/pre-venda/pre-venda-read/pre-venda-read.component';
 import { PrevendaCrudComponent } from './views/prevenda-crud/prevenda-crud.component';
+import { BaseFormComponent } from './shared/base-form/base-form.component';
+import { PreVendaCreateComponent } from './components/pre-venda/pre-venda-create/pre-venda-create.component';
+import { PreVendaUpdateComponent } from './components/pre-venda/pre-venda-update/pre-venda-update.component';
+import { PreVendaDeleteComponent } from './components/pre-venda/pre-venda-delete/pre-venda-delete.component';
 
 /*import { ForDirective } from './directives/for.directive';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
@@ -92,7 +96,11 @@ registerLocaleData(localePt);//passar para formato pt-BR
     ClienteCreateComponent,
     HomeCrudComponent,
     PreVendaReadComponent,
-    PrevendaCrudComponent
+    PrevendaCrudComponent,
+    BaseFormComponent,
+    PreVendaCreateComponent,
+    PreVendaUpdateComponent,
+    PreVendaDeleteComponent
   ],
   imports: [
     BrowserModule, 

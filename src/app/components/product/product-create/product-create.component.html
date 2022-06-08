@@ -27,6 +27,7 @@
             <input matInput placeholder="Preço (R$)" [(ngModel)]="produto.preco" name="preco"
                 [formControl]="preco"
                 required 
+                onchange="pontoVirgula()"
                 pattern="\d+,?\d{0,2}">
         </mat-form-field>
     </form>

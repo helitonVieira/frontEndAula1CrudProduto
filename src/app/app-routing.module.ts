@@ -1,3 +1,6 @@
+import { PreVendaDeleteComponent } from './components/pre-venda/pre-venda-delete/pre-venda-delete.component';
+import { PreVendaUpdateComponent } from './components/pre-venda/pre-venda-update/pre-venda-update.component';
+import { PreVendaCreateComponent } from './components/pre-venda/pre-venda-create/pre-venda-create.component';
 import { PrevendaCrudComponent } from './views/prevenda-crud/prevenda-crud.component';
 import { HomeCrudComponent } from './views/home-crud/home-crud.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
@@ -40,6 +43,9 @@ const routes: Routes = [
       { path: "subcategorias/delete/:id", component: SubcategoriaDeleteComponent },
 
       { path: "prevendas", component: PrevendaCrudComponent },
+      { path: " prevendas/create", component:  PreVendaCreateComponent },
+      { path: "prevendas/update/:id", component:  PreVendaUpdateComponent },
+      { path: "prevendas/delete/:id", component:  PreVendaDeleteComponent },
     ]
   },
   { path: "login/cliente/create", component: ClienteCreateComponent },

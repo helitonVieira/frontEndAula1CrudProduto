@@ -14,6 +14,7 @@ import { FormControl, Validators } from '@angular/forms';
   templateUrl: './product-create.component.html',
   styleUrls: ['./product-create.component.css']
 })
+
 export class ProductCreateComponent implements OnInit {
 
   subcategorias: Subcategoria[]
@@ -60,5 +61,9 @@ export class ProductCreateComponent implements OnInit {
     } else {
       return false;
     }
+  }
+
+  pontoVirgula():void {    
+    this.produto.preco = Number(String(this.produto.preco).replace('.', ','))
   }
 }

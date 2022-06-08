@@ -19,5 +19,5 @@ export class PrevendaCrudComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
 }
