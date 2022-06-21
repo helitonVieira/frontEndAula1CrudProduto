@@ -1,1 +1,25 @@
-<p>pre-venda-delete works!</p>
+<mat-card>
+    <mat-card-title>Excluir Subcategoria</mat-card-title>
+    <form>
+        <mat-form-field>
+            <input matInput placeholder="Data Pré venda"
+                [value]="prevenda.dtaPreVenda" name="dtaPreVenda" disabled>
+        </mat-form-field>   
+        <mat-form-field>
+            <input matInput placeholder="Data validade" [value]="prevenda.dtaValidade" name="dtaValidade" disabled>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Status" [value]="prevenda.status" name="status" disabled>
+        </mat-form-field>    
+        <mat-form-field>
+            <input matInput placeholder="Cliente" [value]="prevenda.cliente.nome" name="nome" disabled>
+        </mat-form-field> 
+    </form>
+    <button mat-raised-button (click)="deleteSubcategoria()" color="warn">
+        Excluir
+    </button>
+    
+    <button mat-raised-button (click)="cancel()">
+        Cancelar
+    </button>
+</mat-card>
