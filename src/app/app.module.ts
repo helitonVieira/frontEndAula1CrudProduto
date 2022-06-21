@@ -48,6 +48,8 @@ import { SubcategoriaDeleteComponent } from './components/subcategoria/subcatego
 import { SubcategoriaCreateComponent } from './components/subcategoria/subcategoria-create/subcategoria-create.component'; // ng generate @angular/material:table components/product/product-head2
 
 import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+
 import { DomJqueryComponent } from './components/estudo/dom-jquery/dom-jquery.component';
 import { LoginComponent } from './components/login/login.component';
 //import { ToastrModule } from 'ngx-toastr';
@@ -62,6 +64,7 @@ import { BaseFormComponent } from './shared/base-form/base-form.component';
 import { PreVendaCreateComponent } from './components/pre-venda/pre-venda-create/pre-venda-create.component';
 import { PreVendaUpdateComponent } from './components/pre-venda/pre-venda-update/pre-venda-update.component';
 import { PreVendaDeleteComponent } from './components/pre-venda/pre-venda-delete/pre-venda-delete.component';
+import { MatNativeDateModule } from '@angular/material/core';
 
 /*import { ForDirective } from './directives/for.directive';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
@@ -120,7 +123,9 @@ registerLocaleData(localePt);//passar para formato pt-BR
     MatPaginatorModule,// ng generate @angular/material:table <components/product/product-read2
     MatSortModule,// ng generate @angular/material:table <components/product/product-read2
     MatSelectModule,
-    ReactiveFormsModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    ReactiveFormsModule   
     /*ToastrModule.forRoot({ //mostrar msg na tela roda comando gitBash: npm i ngx-toastr --save
       timeOut:4000,
       closeButton:true,

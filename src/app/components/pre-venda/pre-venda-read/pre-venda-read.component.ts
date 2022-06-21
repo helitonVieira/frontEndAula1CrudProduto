@@ -1,8 +1,6 @@
 import { PrevendaService } from './../prevenda.service';
 import { Prevenda } from './../../../models/Prevenda.model';
-import { ProdutoService } from './../../product/produto.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { Produto } from './../../product/produto.model';
 import { BaseFormComponent } from './../../../shared/base-form/base-form.component';
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
@@ -15,6 +13,8 @@ import { Component, OnInit } from '@angular/core';
 
 export class PreVendaReadComponent extends BaseFormComponent<Prevenda> implements OnInit {
  
+  prevendas: Prevenda[]
+
   displayedColumns = ['id', 'dtaPreVenda', 'dtaValidade','status', 'cliente.id', 'cliente.nome', 'action']
 
     constructor(private prevendaService: PrevendaService,
@@ -53,6 +53,6 @@ export class PreVendaReadComponent extends BaseFormComponent<Prevenda> implement
   } 
 
   navigateCreate(): void {
-    this.router.navigate(['/products/create'])
+    this.router.navigate(['/prevendas/create'])
   }
 }

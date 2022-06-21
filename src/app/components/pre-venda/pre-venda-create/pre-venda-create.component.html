@@ -1,1 +1,57 @@
-<p>pre-venda-create works!</p>
+<mat-card>
+    <mat-card-title>Novo Prevenda</mat-card-title>
+    <form>
+      <!-- comentario --> 
+      <div fxLayout="row wrap">
+          <div fxFlex="50" fxFill FxLayoutAlign="start center" >
+            <mat-form-field class="example-full-width">  
+                <mat-label>Data Prevenda</mat-label>          
+                <input matInput [matDatepicker]="picker" [formControl]="dtaPreVenda" 
+                required
+                [(ngModel)]="prevenda.dtaPreVenda" 
+                name="dtaPreVenda">
+                <mat-datepicker-toggle matSuffix [for]="picker"> </mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field> 
+          </div> 
+          <div fxFlex="50" fxFill FxLayoutAlign="start center">
+            <mat-form-field class="example-full-width">  
+                <mat-label>Data Validade</mat-label>          
+                <input matInput [matDatepicker]="validaPicker" 
+                    [formControl]="dtaValidade" 
+                    [(ngModel)]="prevenda.dtaValidade" 
+                    required
+                    name="dtaValidade">
+                <mat-datepicker-toggle matSuffix [for]="validaPicker"> </mat-datepicker-toggle>
+                <mat-datepicker #validaPicker></mat-datepicker>
+            </mat-form-field> 
+
+          </div> 
+        </div> 
+
+       
+
+        <mat-form-field>
+            <mat-label> Cliente </mat-label>
+            <mat-select [(ngModel)]="prevenda.cliente.id" 
+                name="prevenda.cliente.id" 
+                placeholder="Cliente"
+                [formControl]="cliente"
+                required >
+                <mat-option [value]=""> </mat-option>
+                <mat-option *ngFor=" let cliente of clientes" [value]="cliente.id">
+                    {{cliente.nome}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>      
+		
+    </form>
+    <button mat-raised-button (click)="createPrevenda()" [disabled]="!validaCampor()">
+        Salvar
+    </button>
+    
+    <button mat-raised-button (click)="cancel()" >
+        Cancelar
+    </button>
+</mat-card>
+

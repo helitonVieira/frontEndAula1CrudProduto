@@ -13,6 +13,6 @@ export class PrevendaService extends CrudServiceService<Prevenda>{
 
 
   constructor(protected snackBar: MatSnackBar, protected http: HttpClient) {
-    super(snackBar, http, `${environment.api_url}/produtos`);
+    super(snackBar, http, `${environment.api_url}/prevendas`);
   }
 }

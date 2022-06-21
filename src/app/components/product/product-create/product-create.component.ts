@@ -17,13 +17,13 @@ import { FormControl, Validators } from '@angular/forms';
 
 export class ProductCreateComponent implements OnInit {
 
-  subcategorias: Subcategoria[]
-
   produto: Produto = {
     nome: '',
     subcategoria: { id: null, descricao: '' },
     preco: null
   }
+
+  subcategorias: Subcategoria[]
 
   nome = new FormControl(null, Validators.minLength(2));
   subcategoria = new FormControl(null, Validators.minLength(2));

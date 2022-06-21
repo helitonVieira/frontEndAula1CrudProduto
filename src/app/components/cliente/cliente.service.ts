@@ -1,3 +1,4 @@
+import { Cliente } from './cliente-create/clientes.model';
 import { environment } from './../../../environments/environment';
 
 import { HttpParams } from '@angular/common/http';
@@ -38,12 +39,13 @@ export class ClienteService {
     );
   }
 
-  read(): Observable<ClienteNewDTO[]> {
-    return this.http.get<ClienteNewDTO[]>(this.baseUrl).pipe(
+  read(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(this.baseUrl).pipe(
       map((obj) => obj),
       catchError((e) => this.errorHandler(e))
     );
   }
+ 
 
    page(page,linesPerPage,orderBy,direction): Observable<PageCliente> {
     return this.http.get<PageCliente>(this.baseUrl + '/page', {

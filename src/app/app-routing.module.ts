@@ -43,7 +43,7 @@ const routes: Routes = [
       { path: "subcategorias/delete/:id", component: SubcategoriaDeleteComponent },
 
       { path: "prevendas", component: PrevendaCrudComponent },
-      { path: " prevendas/create", component:  PreVendaCreateComponent },
+      { path: "prevendas/create", component:  PreVendaCreateComponent },
       { path: "prevendas/update/:id", component:  PreVendaUpdateComponent },
       { path: "prevendas/delete/:id", component:  PreVendaDeleteComponent },
     ]
