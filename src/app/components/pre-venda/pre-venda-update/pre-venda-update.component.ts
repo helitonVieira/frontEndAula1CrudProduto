@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { PrevendaService } from './../prevenda.service';
 import { Prevenda } from './../../../models/Prevenda.model';
 import { Cliente } from './../../cliente/cliente-create/clientes.model';
@@ -14,7 +15,8 @@ import { Component, OnInit } from '@angular/core';
 export class PreVendaUpdateComponent implements OnInit {
 
   prevenda: Prevenda;
-  clientes: Cliente[];
+ // clientes: Cliente[];  Atualizado para usar a pipe | async
+ clientes: Observable<Cliente[]>;
 
   preTeste: Prevenda = {
     id: 10,
@@ -39,10 +41,13 @@ export class PreVendaUpdateComponent implements OnInit {
 
   ngOnInit(): void {
 
+    this.clientes = this.clienteService.read();
+
     //carregar as cliente
-    this.clienteService.read().subscribe(clientes => {
+    /* Atualizado para usar a pipe | async
+      this.clienteService.read().subscribe(clientes => {
       this.clientes = clientes
-    });
+    });*/
 
     const id = +this.route.snapshot.paramMap.get("id");
     this.prevendaService.readById(id).subscribe((prevenda) => {

@@ -44,7 +44,7 @@
       <mat-select [(ngModel)]="prevenda.cliente.id" name="cliente.id" placeholder="Cliente" [formControl]="cliente"
         required>
         <mat-option [value]=""> </mat-option>
-        <mat-option *ngFor=" let cliente of clientes" [value]="cliente.id">
+        <mat-option *ngFor=" let cliente of clientes | async" [value]="cliente.id">
           {{cliente.nome}}
         </mat-option>
       </mat-select>
