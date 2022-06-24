@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs';
 import { ClienteNewDTO } from './../../cliente/cliente.model';
 import { Cliente } from './../../cliente/cliente-create/clientes.model';
 import { ClienteService } from './../../cliente/cliente.service';
@@ -21,7 +22,8 @@ export class PreVendaCreateComponent implements OnInit {
     cliente:{id:null, nome:'', email:''}
   }
 
-  clientes : Cliente[];
+  //clientes : Cliente[];
+  clientes : Observable<Cliente[]>;
   
   dtaPreVenda = new FormControl(null, Validators.required);
   dtaValidade = new FormControl(null);
@@ -34,9 +36,11 @@ export class PreVendaCreateComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    this.clienteService.read().subscribe(clientes => {
+
+    this.clientes = this.clienteService.read();
+    /*this.clienteService.read().subscribe(clientes => {
       this.clientes = clientes
-    })
+    })*/
 
   }
 
