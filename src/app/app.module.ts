@@ -65,6 +65,10 @@ import { PreVendaCreateComponent } from './components/pre-venda/pre-venda-create
 import { PreVendaUpdateComponent } from './components/pre-venda/pre-venda-update/pre-venda-update.component';
 import { PreVendaDeleteComponent } from './components/pre-venda/pre-venda-delete/pre-venda-delete.component';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ClienteReadComponent } from './components/cliente/cliente-read/cliente-read.component';
+import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+import { ClienteCreate2Component } from './components/cliente/cliente-create2/cliente-create2.component';
 
 /*import { ForDirective } from './directives/for.directive';
 import { ProductUpdateComponent } from './components/product/product-update/product-update.component';
@@ -103,7 +107,11 @@ registerLocaleData(localePt);//passar para formato pt-BR
     BaseFormComponent,
     PreVendaCreateComponent,
     PreVendaUpdateComponent,
-    PreVendaDeleteComponent
+    PreVendaDeleteComponent,
+    ClienteReadComponent,
+    ClienteUpdateComponent,
+    ClienteDeleteComponent,
+    ClienteCreate2Component
   ],
   imports: [
     BrowserModule, 

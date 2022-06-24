@@ -1,3 +1,7 @@
+import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { ClienteCreate2Component } from './components/cliente/cliente-create2/cliente-create2.component';
+import { ClienteCrudComponent } from './views/cliente-crud/cliente-crud.component';
 import { PreVendaDeleteComponent } from './components/pre-venda/pre-venda-delete/pre-venda-delete.component';
 import { PreVendaUpdateComponent } from './components/pre-venda/pre-venda-update/pre-venda-update.component';
 import { PreVendaCreateComponent } from './components/pre-venda/pre-venda-create/pre-venda-create.component';
@@ -46,6 +50,11 @@ const routes: Routes = [
       { path: "prevendas/create", component:  PreVendaCreateComponent },
       { path: "prevendas/update/:id", component:  PreVendaUpdateComponent },
       { path: "prevendas/delete/:id", component:  PreVendaDeleteComponent },
+
+      { path: "clientes", component: ClienteCrudComponent },
+      { path: "clientes/create", component:  ClienteCreate2Component },
+      { path: "clientes/update/:id", component:  ClienteUpdateComponent },
+      { path: "clientes/delete/:id", component:  ClienteDeleteComponent },
     ]
   },
   { path: "login/cliente/create", component: ClienteCreateComponent },
