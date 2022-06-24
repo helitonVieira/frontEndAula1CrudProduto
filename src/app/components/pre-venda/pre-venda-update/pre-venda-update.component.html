@@ -1,18 +1,61 @@
-<p>pre-venda-update works!</p>
-<!-- alterar o status 
+<mat-card>
+  <mat-card-title>Atualizar Pré venda</mat-card-title>
+  <form>
+    <!-- comentario -->
+    <div fxLayout="row wrap">
+      <div fxFlex="50" fxFill FxLayoutAlign="start center">
+        <mat-form-field class="example-full-width">
+          <mat-label> {{prevenda.dtaPreVenda | date: 'dd/MM/yyyy'}} </mat-label>
+          <input matInput [matDatepicker]="picker" [formControl]="dtaPreVenda" required
+            [(ngModel)]="prevenda.dtaPreVenda" name="dtaPreVenda">
+          <mat-hint mat-hint> Data Pré Venda </mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"> </mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div fxFlex="50" fxFill FxLayoutAlign="start center">
+        <mat-form-field class="example-full-width">
+          <mat-label>{{prevenda.dtaValidade | date: 'dd/MM/yyyy'}}</mat-label>
+          <input matInput [matDatepicker]="validaPicker" 
+            [formControl]="dtaValidade" 
+            [(ngModel)]="prevenda.dtaValidade"
+            required name="dtaValidade">
+          <mat-hint mat-hint> Data Validade </mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="validaPicker"> </mat-datepicker-toggle>
+          <mat-datepicker #validaPicker></mat-datepicker>
+        </mat-form-field>
+      </div>
+    </div>
 
-    
-<div>
-    <mat-form-field appearance="outline">
-        <mat-label>Selecione um status</mat-label>
-        <mat-select 
-        [(ngModel)]="prevenda.status"
-        name="status"
-        [formControl]="status" 
-        required>
-          <mat-option value="0">ABERTO</mat-option>
-          <mat-option value="1">EM ANDAMENTO</mat-option>
-          <mat-option value="2">ENCERRADO</mat-option>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>Status</mat-label>
+        <mat-select [(ngModel)]="prevenda.status" name="status" required [formControl]="status">
+          <mat-option value="ABERTO">ABERTO</mat-option>
+          <mat-option value="ANDAMENTO">EM ANDAMENTO</mat-option>
+          <mat-option value="ENCERRADO">ENCERRADO</mat-option>
         </mat-select>
-      </mat-form-field>  
-    </div>-->
+      </mat-form-field>
+    </div>
+
+
+    <mat-form-field>
+      <mat-label> Cliente </mat-label>
+      <mat-select [(ngModel)]="prevenda.cliente.id" name="cliente.id" placeholder="Cliente" [formControl]="cliente"
+        required>
+        <mat-option [value]=""> </mat-option>
+        <mat-option *ngFor=" let cliente of clientes" [value]="cliente.id">
+          {{cliente.nome}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+  </form>
+  <button mat-raised-button (click)="updatePrevenda()" [disabled]="!validaCampos()">
+    Salvar
+  </button>
+
+  <button mat-raised-button (click)="cancel()">
+    Cancelar
+  </button>
+</mat-card>

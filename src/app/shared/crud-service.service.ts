@@ -61,7 +61,14 @@ export class CrudServiceService<T> {
     }
   
     update(record: T): Observable<T> {
+     // record['id'] = 10;
       const url = `${this.baseUrl}/${record['id']}`;
+      
+      //record['dtaPreVenda'] = null;
+      //record['dtaValidade'] = null;
+     // record['status'] = 'ABERTO';
+
+     // record['cliente']['id'] = 1;
       return this.http.put<T>(url, record).pipe(
         map((obj) => obj),
         catchError((e) => this.errorHandler(e))
