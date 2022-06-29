@@ -1,6 +1,5 @@
 import { ClienteNewDTO } from './cliente.model';
 import { CrudServiceService } from './../../shared/crud-service.service';
-import { Cliente } from './cliente-create/clientes.model';
 import { environment } from './../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
