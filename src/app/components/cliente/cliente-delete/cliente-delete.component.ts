@@ -36,5 +36,4 @@ export class ClienteDeleteComponent implements OnInit {
     this.router.navigate(["/clientes"]);
   }
 
-
 }
