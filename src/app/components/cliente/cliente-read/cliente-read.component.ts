@@ -52,7 +52,7 @@ export class ClienteReadComponent extends BaseFormComponent<ClienteNewDTO> imple
   }
 
   navigateCreate(): void {
-    this.router.navigate(['/prevendas/create'])
+    this.router.navigate(['/clientes/create'])
   }
 
 }
